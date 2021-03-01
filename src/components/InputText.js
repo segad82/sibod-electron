@@ -1,11 +1,11 @@
 import { Form } from 'react-bootstrap';
 
 function InputText(props) {
-    const { name, placeholder, value, info, onChange, disabled } = props;
+    const { name, placeholder, value, info, onChange, size, disabled } = props;
     return (
         <Form.Group controlId={name}>
             <Form.Control
-              size="lg" 
+              size={size}
               type="text" 
               name={name}
               value={value}

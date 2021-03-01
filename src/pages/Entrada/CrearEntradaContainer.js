@@ -5,7 +5,7 @@ function CrearEntradaContainer() {
 
     const [ form, setForm ] = useState({
         fecha: new Date().toJSON().slice(0,10).replace(/-/g,'-'),
-        valor: 0,
+        valor: '',
         guia: '',
         proveedor: '',
         ordenCompra: 0,

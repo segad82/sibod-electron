@@ -1,7 +1,7 @@
 import { Form, InputGroup } from 'react-bootstrap';
 
 function Datepicker(props) {
-   const { name, label, value, info, onChange, disabled } = props;
+   const { name, label, value, info, onChange, disabled, size } = props;
     return (
       <Form.Group controlId={name}>
         <InputGroup>
@@ -9,13 +9,14 @@ function Datepicker(props) {
             <InputGroup.Text>{label}</InputGroup.Text>
           </InputGroup.Prepend>
           <Form.Control
-            size="lg" 
+            size={size}
             type="date" 
             name={name}
             value={value}
             onChange={onChange} 
             disabled={disabled}
             aria-describedby={name + 'Help'}
+            size={size}
           />
         </InputGroup>
         {info ? <Form.Text id={name + 'Help'} muted>{info}</Form.Text> : null}

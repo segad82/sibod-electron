@@ -1,4 +1,7 @@
+import TempActivos from '../../components/TempActivos/TempActivosContainer';
+import TempConsumibles from '../../components/TempConsumibles/TempConsumiblesContainer';
 import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
+import { Fragment } from 'react';
 import InputText from '../../components/InputText';
 import Select from '../../components/Select';
 import Datepicker from '../../components/Datepicker';
@@ -23,7 +26,7 @@ function CrearEntrada(props) {
     } = props;
 
     return (
-        <Container>
+        <Fragment>
             <br/>
             <Card style={{ width: '100%' }}>
               <Card.Body>
@@ -96,6 +99,14 @@ function CrearEntrada(props) {
                             />
                         </Col>
                     </Row>
+                    <Row>
+                        <Col>
+                            <TempActivos />
+                        </Col>
+                        <Col>
+                            <TempConsumibles />
+                        </Col>
+                    </Row>
                     <br/>
                     <Row>
                         <Col>
@@ -108,7 +119,7 @@ function CrearEntrada(props) {
                 </Form>
               </Card.Body>
             </Card>
-        </Container>
+        </Fragment>
     );
 
 }
