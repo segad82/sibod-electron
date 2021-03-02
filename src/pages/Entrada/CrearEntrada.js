@@ -1,11 +1,12 @@
 import TempActivos from '../../components/TempActivos/TempActivosContainer';
 import TempConsumibles from '../../components/TempConsumibles/TempConsumiblesContainer';
-import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Form, Spinner } from 'react-bootstrap';
 import { Fragment } from 'react';
 import InputText from '../../components/InputText';
 import Select from '../../components/Select';
 import Datepicker from '../../components/Datepicker';
 import TextArea from '../../components/TextArea';
+import Autocomplete from '../../components/Autocomplete';
 
 function CrearEntrada(props) {
 
@@ -44,9 +45,9 @@ function CrearEntrada(props) {
                                 info="Por favor indique la fecha."
                                 onChange={onChange}
                             />
-                            <Select 
+                            <Autocomplete
                                 name="proveedor"
-                                label="Proveedor"
+                                placeholder="Proveedor..."
                                 value={proveedor}
                                 info="Por favor seleccione el proveedor."
                                 onChange={onChange}
