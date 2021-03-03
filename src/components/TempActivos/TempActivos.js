@@ -1,36 +1,60 @@
-import { Row, Col, Table } from 'react-bootstrap';
+import { Table, Row, Col } from 'react-bootstrap';
+import { Fragment } from 'react';
+import Autocomplete from '../../components/Autocomplete';
 
 function TempActivos(props) {
 
-    const {} = props;
+    const {
+      onAdd,
+      onDelete,
+      searchList,
+      activos,
+      activo,
+      onChangeActivo
+    } = props;
+
+    let filas = activos.map((obj, index) => {
+      return (
+        <tr key={index} id={`row_${obj.id}`}>
+          <td>{obj.id}</td>
+          <td>{obj.name}</td>
+          <td>
+            <a id={obj.id} href="#" className="btn" onClick={onDelete}>Del</a>
+          </td>
+        </tr>
+      );
+    });
 
     return (
+      <Fragment>
+        <Row>
+          <Col>
+            <Autocomplete
+              name="activo"
+              placeholder="Activo..."
+              selected={activo}
+              options={searchList}
+              labelKey="name"
+              onChange={onChangeActivo}
+            />
+          </Col>
+          <Col>
+            <a href="#" className="btn" onClick={onAdd}>Add</a>
+          </Col>
+        </Row>
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
-              <th>Activo</th>
-              <th>Código</th>
-              <th>Serie</th>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
+            {filas}
           </tbody>
         </Table>
+      </Fragment>
     );
 
 }

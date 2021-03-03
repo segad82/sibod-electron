@@ -1,7 +1,6 @@
 import TempActivos from '../../components/TempActivos/TempActivosContainer';
 import TempConsumibles from '../../components/TempConsumibles/TempConsumiblesContainer';
 import { Container, Row, Col, Card, Button, Form, Spinner } from 'react-bootstrap';
-import { Fragment } from 'react';
 import InputText from '../../components/InputText';
 import Select from '../../components/Select';
 import Datepicker from '../../components/Datepicker';
@@ -27,7 +26,7 @@ function CrearEntrada(props) {
     } = props;
 
     return (
-        <Fragment>
+        <Container>
             <br/>
             <Card style={{ width: '100%' }}>
               <Card.Body>
@@ -48,10 +47,10 @@ function CrearEntrada(props) {
                             <Autocomplete
                                 name="proveedor"
                                 placeholder="Proveedor..."
-                                value={proveedor}
-                                info="Por favor seleccione el proveedor."
+                                info="Por favor encuentre el proveedor."
                                 onChange={onChange}
                                 options={proveedores}
+                                labelKey="id"
                             />
                         </Col>
                         <Col>
@@ -120,7 +119,7 @@ function CrearEntrada(props) {
                 </Form>
               </Card.Body>
             </Card>
-        </Fragment>
+        </Container>
     );
 
 }
