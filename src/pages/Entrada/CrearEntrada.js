@@ -1,6 +1,7 @@
 import TempActivos from '../../components/TempActivos/TempActivosContainer';
 import TempConsumibles from '../../components/TempConsumibles/TempConsumiblesContainer';
 import { Container, Row, Col, Card, Button, Form, Spinner } from 'react-bootstrap';
+import { Fragment } from 'react';
 import InputText from '../../components/InputText';
 import Select from '../../components/Select';
 import Datepicker from '../../components/Datepicker';
@@ -18,7 +19,11 @@ function CrearEntrada(props) {
         documento,
         nota,
         activos,
+        onChangeActivos,
+        searchActivos,
         consumibles,
+        onChangeConsumibles,
+        searchConsumibles,
         proveedores,
         ordenesCompra,
         onChange,
@@ -26,8 +31,7 @@ function CrearEntrada(props) {
     } = props;
 
     return (
-        <Container>
-            <br/>
+        <Fragment>
             <Card style={{ width: '100%' }}>
               <Card.Body>
                 <Card.Title>
@@ -101,10 +105,18 @@ function CrearEntrada(props) {
                     </Row>
                     <Row>
                         <Col>
-                            <TempActivos />
+                            <TempActivos 
+                                activos={activos} 
+                                onChangeActivos={onChangeActivos} 
+                                searchList={searchActivos} 
+                            />
                         </Col>
                         <Col>
-                            <TempConsumibles />
+                            <TempConsumibles 
+                                consumibles={consumibles} 
+                                onChangeConsumibles={onChangeConsumibles} 
+                                searchList={searchConsumibles} 
+                            />
                         </Col>
                     </Row>
                     <br/>
@@ -119,7 +131,7 @@ function CrearEntrada(props) {
                 </Form>
               </Card.Body>
             </Card>
-        </Container>
+        </Fragment>
     );
 
 }

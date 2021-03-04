@@ -3,41 +3,39 @@ import TempActivos from './TempActivos';
 
 function TempActivosContainer(props) {
 
-    const searchList = [
-        { id: 1, name: 'Test1' },
-        { id: 2, name: 'Test2' },
-        { id: 3, name: 'Test3' },
-        { id: 4, name: 'Test4' },
-        { id: 5, name: 'Test5' }
-    ];
+    const { activos, onChangeActivos, searchList } = props;
 
-    const [ activos, setActivos ] = useState([]);
     const [ activo, setActivo ] = useState([]);
 
     function handelOnChangeActivo(e) {
         const {value} = e.target;
+        value['serie'] = '';
         setActivo([value]);
+        if(value) {
+            onChangeActivos([value, ...activos]);
+            setActivo([]);
+        }
     }
 
-    function handelOnAdd(e) {
-        let temp = activos;
-        temp.push(activo[0]);
-        setActivos(temp);
+    function handelOnChangeRow(e, i, obj) {
+        const { name, value } = e.target;
+        obj[name] = value;
+        activos.splice(i, 1, obj);
         setActivo([]);
     }
 
     function handelOnDelete(e) {
         const { id } = e.target;
-        document.getElementById(`row_${id}`).remove();
+        activos.splice(id, 1);
     }
 
     return <TempActivos 
-            onAdd={handelOnAdd}
             onDelete={handelOnDelete}
             searchList={searchList}
             activos={activos}
             activo={activo}
             onChangeActivo={handelOnChangeActivo}
+            onChangeRow={handelOnChangeRow}
         />
 
 }

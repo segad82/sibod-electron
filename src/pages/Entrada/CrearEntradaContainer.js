@@ -10,10 +10,11 @@ function CrearEntradaContainer() {
         proveedor: '',
         ordenCompra: 0,
         documento: '',
-        nota: '',
-        activos: [],
-        consumibles: []
+        nota: ''
     });
+
+    const [ activos, setActivos ] = useState([]);
+    const [ consumibles, setConsumibles ] = useState([]);
 
     function handelOnChange(e) {
         let { name, value } = e.target;
@@ -28,10 +29,26 @@ function CrearEntradaContainer() {
         e.preventDefault();
         
         console.log(form);
+        console.log(activos);
+        console.log(consumibles);
     }
 
     const proveedores = [];
     const ordenesCompra = [];
+    const searchActivos = [
+        { id: 1, name: 'Test1' },
+        { id: 2, name: 'Test2' },
+        { id: 3, name: 'Test3' },
+        { id: 4, name: 'Test4' },
+        { id: 5, name: 'Test5' }
+    ];
+    const searchConsumibles = [
+        { id: 1, name: 'Test1' },
+        { id: 2, name: 'Test2' },
+        { id: 3, name: 'Test3' },
+        { id: 4, name: 'Test4' },
+        { id: 5, name: 'Test5' }
+    ];
 
     return <CrearEntrada 
             {...form}
@@ -39,6 +56,12 @@ function CrearEntradaContainer() {
             ordenesCompra={ordenesCompra}
             onChange={handelOnChange} 
             onSubmit={handelOnSubmit}
+            activos={activos}
+            onChangeActivos={setActivos}
+            searchActivos={searchActivos}
+            consumibles={consumibles}
+            onChangeConsumibles={setConsumibles}
+            searchConsumibles={searchConsumibles}
         />
 
 }
