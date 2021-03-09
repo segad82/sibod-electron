@@ -18,7 +18,7 @@ function Inicio(props) {
         { name: 'Trabajadores', url: '/trabajadores' },
         { name: 'Áreas', url: '/areas' },
         { name: 'Turnos', url: '/turnos' },
-        { name: 'Proveedores', url: '/provedores' },
+        { name: 'Proveedores', url: '/proveedores' },
         { name: 'Ordenes de Compra', url: '/ordenes_compra' }
     ];
     return (

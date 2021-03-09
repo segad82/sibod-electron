@@ -60,7 +60,7 @@ function CrearProveedor(props) {
                             <Button type="submit" variant="outline-dark" size="lg" block>Guardar</Button>
                         </Col>
                         <Col>
-                            <Button href="/" variant="outline-dark" size="lg" block>Cancelar</Button>
+                            <Button href="/proveedores" variant="outline-dark" size="lg" block>Cancelar</Button>
                         </Col>
                     </Row>
                 </Form>

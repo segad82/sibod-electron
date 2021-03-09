@@ -14,6 +14,7 @@ import CrearConsumible from './pages/Consumible/CrearConsumibleContainer';
 import CrearActivo from './pages/Activo/CrearActivoContainer';
 import CrearTrabajador from './pages/Trabajador/CrearTrabajadorContainer';
 import CrearEntrada from './pages/Entrada/CrearEntradaContainer';
+import ConsultarProveedores from './pages/Proveedor/ConsultarProveedoresContainer';
 
 function Router() {
     return (
@@ -21,7 +22,8 @@ function Router() {
             <Switch>
                 <Route exact path="/" component={Inicio}/>
                 <Route exact path="/ordenes_compra" component={CrearOrdenCompra}/>
-                <Route exact path="/provedores" component={CrearProveedor}/>
+                <Route exact path="/proveedor" component={CrearProveedor}/>
+                <Route exact path="/proveedor/:id" component={CrearProveedor}/>
                 <Route exact path="/turnos" component={CrearTurno}/>
                 <Route exact path="/areas" component={CrearArea}/>
                 <Route exact path="/categorias" component={CrearCategoria}/>
@@ -32,6 +34,7 @@ function Router() {
                 <Route exact path="/activos" component={CrearActivo}/>
                 <Route exact path="/trabajadores" component={CrearTrabajador}/>
                 <Route exact path="/entradas" component={CrearEntrada}/>
+                <Route exact path="/proveedores" component={ConsultarProveedores}/>
                 <Route component={NotFound}/>
             </Switch>
         </BrowserRouter>

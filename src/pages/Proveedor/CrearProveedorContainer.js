@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import CrearProveedor from './CrearProveedor';
+import { useParams } from "react-router-dom";
 
 function CrearProveedorContainer(props) {
-    
+    const { id } = useParams();
+    console.log(id);
     const [ form, setForm ] = useState({
         nombre: '',
         correo: '',
