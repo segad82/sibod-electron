@@ -4,7 +4,7 @@ import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
-function ConsultarProveedores(props) {
+function ConsultarOrdenesCompra(props) {
 
     const { onGridReady, rowData, onBtnExport, frameworkComponents } = props;
     return (
@@ -13,7 +13,7 @@ function ConsultarProveedores(props) {
             <Card style={{ width: '100%' }}>
               <Card.Body>
                 <Card.Title>
-                    <h4>Proveedores</h4>
+                    <h4>Ordenes de Compra</h4>
                 </Card.Title>
                 <Row>
                     <Col xs={6}></Col>
@@ -21,7 +21,7 @@ function ConsultarProveedores(props) {
                         <Button variant="outline-dark" onClick={() => onBtnExport()} block>Exportar</Button>
                     </Col>
                     <Col>
-                        <Button href="/proveedor" variant="outline-dark" block>Crear</Button>
+                        <Button href="/orden_compra" variant="outline-dark" block>Crear</Button>
                     </Col>
                     <Col>
                         <Button href="/" variant="outline-dark" block>Salir</Button>
@@ -35,10 +35,8 @@ function ConsultarProveedores(props) {
                         frameworkComponents={frameworkComponents}>
                         <AgGridColumn field="id" sortable={ true } resizable={true}></AgGridColumn>
                         <AgGridColumn field="nombre" sortable={ true } filter={ true }></AgGridColumn>
-                        <AgGridColumn field="correo"></AgGridColumn>
-                        <AgGridColumn field="telefono"></AgGridColumn>
                         <AgGridColumn field="estado" sortable={ true }></AgGridColumn>
-                        <AgGridColumn cellRenderer="gridCellButton" cellRendererParams={{ path: 'proveedor', text: 'Editar' }}></AgGridColumn>
+                        <AgGridColumn cellRenderer="gridCellButton" cellRendererParams={{ path: 'orden_compra', text: 'Editar' }}></AgGridColumn>
                     </AgGridReact>
                 </div>
               </Card.Body>
@@ -48,4 +46,4 @@ function ConsultarProveedores(props) {
 
 }
 
-export default ConsultarProveedores;
+export default ConsultarOrdenesCompra;

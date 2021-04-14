@@ -15,17 +15,23 @@ import CrearActivo from './pages/Activo/CrearActivoContainer';
 import CrearTrabajador from './pages/Trabajador/CrearTrabajadorContainer';
 import CrearEntrada from './pages/Entrada/CrearEntradaContainer';
 import ConsultarProveedores from './pages/Proveedor/ConsultarProveedoresContainer';
+import ConsultarOrdenesCompra from './pages/OrdenCompra/ConsultarOrdenesCompraContainer';
+import ConsultarTurnos from './pages/Turno/ConsultarTurnosContainer';
+import ConsultarAreas from './pages/Area/ConsultarAreasContainer';
 
 function Router() {
     return (
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={Inicio}/>
-                <Route exact path="/ordenes_compra" component={CrearOrdenCompra}/>
+                <Route exact path="/orden_compra" component={CrearOrdenCompra}/>
+                <Route exact path="/orden_compra/:id" component={CrearOrdenCompra}/>
                 <Route exact path="/proveedor" component={CrearProveedor}/>
                 <Route exact path="/proveedor/:id" component={CrearProveedor}/>
-                <Route exact path="/turnos" component={CrearTurno}/>
-                <Route exact path="/areas" component={CrearArea}/>
+                <Route exact path="/turno" component={CrearTurno}/>
+                <Route exact path="/turno/:id" component={CrearTurno}/>
+                <Route exact path="/area" component={CrearArea}/>
+                <Route exact path="/area/:id" component={CrearArea}/>
                 <Route exact path="/categorias" component={CrearCategoria}/>
                 <Route exact path="/marcas" component={CrearMarca}/>
                 <Route exact path="/tipos" component={CrearTipoElemento}/>
@@ -35,6 +41,9 @@ function Router() {
                 <Route exact path="/trabajadores" component={CrearTrabajador}/>
                 <Route exact path="/entradas" component={CrearEntrada}/>
                 <Route exact path="/proveedores" component={ConsultarProveedores}/>
+                <Route exact path="/ordenes_compra" component={ConsultarOrdenesCompra}/>
+                <Route exact path="/turnos" component={ConsultarTurnos}/>
+                <Route exact path="/areas" component={ConsultarAreas}/>
                 <Route component={NotFound}/>
             </Switch>
         </BrowserRouter>

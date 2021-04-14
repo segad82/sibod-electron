@@ -44,7 +44,7 @@ function CrearTurno(props) {
                             <Button type="submit" variant="outline-dark" size="lg" block>Guardar</Button>
                         </Col>
                         <Col>
-                            <Button href="/" variant="outline-dark" size="lg" block>Cancelar</Button>
+                            <Button href="/turnos" variant="outline-dark" size="lg" block>Cancelar</Button>
                         </Col>
                     </Row>
                 </Form>
